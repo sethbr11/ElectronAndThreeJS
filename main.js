@@ -14,6 +14,10 @@ const path = require('path');
 
 const isMac = process.platform === 'darwin'
 
+// Auto updates
+const { updateElectronApp } = require('update-electron-app');
+updateElectronApp(); // additional configuration options available
+
 // Create the Menu
 const menuTemplate = [
   ...(isMac
@@ -131,7 +135,9 @@ const menuTemplate = [
     ]
   },
 ];
-const menu = Menu.buildFromTemplate(menuTemplate);
+// Alternative: no top menu bar
+const noMenuTemplate = [];
+const menu = Menu.buildFromTemplate(noMenuTemplate);
 Menu.setApplicationMenu(menu);
 
 // Create the Browser Window
@@ -142,7 +148,7 @@ function createWindow() {
     icon: './resources/WindowsLogo.png',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true, // This allows us to use Node.js modules in the renderer process
+      nodeIntegration: false, // No access to Node.js APIs in the renderer process, enhancing security
       contextIsolation: true,
       enableRemoteModule: false
     }

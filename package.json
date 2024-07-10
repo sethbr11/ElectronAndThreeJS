@@ -6,7 +6,12 @@
     "start": "electron-forge start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethbr11/ElectronAndThreeJS.git"
   },
   "keywords": [],
   "author": "Seth Brock",
@@ -14,7 +19,8 @@
   "description": "A test app",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",
-    "three": "^0.166.1"
+    "three": "^0.166.1",
+    "update-electron-app": "^3.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.4.0",
@@ -24,6 +30,7 @@
     "@electron-forge/maker-zip": "^7.4.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron-forge/publisher-github": "^7.4.0",
     "@electron/fuses": "^1.8.0",
     "electron": "^31.2.0"
   }
