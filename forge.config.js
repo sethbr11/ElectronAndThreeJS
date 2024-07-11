@@ -23,6 +23,10 @@ module.exports = {
       name: '@electron-forge/maker-rpm',
       config: {},
     },
+    {
+      name: '@electron-forge/maker-dmg',
+      config: {},
+    },
   ],
   plugins: [
     {
@@ -49,8 +53,8 @@ module.exports = {
           owner: 'sethbr11',
           name: 'ElectronAndThreeJS'
         },
-        prerelease: false,
-        draft: true
+        prerelease: true,
+        draft: false
       }
     }
   ]
